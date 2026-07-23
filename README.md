@@ -20,4 +20,6 @@ python -m http.server 8080
 
 条件支持 `all`、`any`、`not`、属性比较、标签、天赋和已发生事件。结果支持属性变化、标签增删、后续事件、死亡与指定结局。所有引用使用稳定 ID。
 
+默认剧本是许辰的幸福荒诞人生，剧情直接内嵌在 `index.html` 中。URL 加上 `?standard=1` 不会改变剧本；如需临时查看原通用事件，可使用 `?scenario=standard`。
+
 URL 加上 `?debug=1` 可打开调试面板。

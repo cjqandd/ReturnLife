@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17130f">
-  <title>ReturnLife · 人生重启档案</title>
-  <meta name="description" content="翻开一份新的命运档案，选择天赋，经历人生，再次重来。">
+  <title>许辰的人生 · ReturnLife</title>
+  <meta name="description" content="许辰幸福、荒诞并且经常被羽毛球击中脑壳的一生。">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -110,6 +110,86 @@
     <pre id="debug-output"></pre>
   </aside>
   <div id="toast" class="toast" role="status"></div>
+  <script type="application/json" id="scenario-xuchen">
+  {
+    "id":"xuchen",
+    "protagonist":"许辰",
+    "description":"许辰幸福、荒诞并且经常被羽毛球击中脑壳的一生。这里没有苦难，只有笑点和精准扣杀。",
+    "events":[
+      {"id":"xc00","name":"完美开局","ageMin":0,"ageMax":0,"weight":100,"text":"许辰出生在一个温暖富足的家庭。父母恩爱，生活无忧，连产房窗外都刚好出现了一道彩虹。","resultText":"护士评价：这孩子的开局配置有点超标。","result":{"attributes":{"wealth":8,"happiness":5,"health":2},"addTags":["许辰","幸福家庭"]},"repeatable":false},
+      {"id":"xc01","name":"抓周奇案","ageMin":1,"ageMax":1,"weight":100,"text":"抓周时，许辰无视算盘和书本，精准抓住了一只不知道谁带来的羽毛球。","resultText":"全家鼓掌，只有羽毛球感到一丝不安。","result":{"attributes":{"happiness":1},"addTags":["命中注定的羽毛球"]},"repeatable":false},
+      {"id":"xc02","name":"两岁外交家","ageMin":2,"ageMax":2,"weight":100,"text":"许辰用半块饼干成功换走邻居小孩的完整玩具车，随后又主动还了回去。","resultText":"商业头脑与家庭教育在他体内短暂交战，家庭教育获胜。","result":{"attributes":{"intelligence":1,"charm":1}},"repeatable":false},
+      {"id":"xc03","name":"幼儿园之星","ageMin":3,"ageMax":3,"weight":100,"text":"幼儿园汇演上，许辰站在最中间。别人唱歌，他负责忘词，但因为长得可爱仍获得最多掌声。","result":{"attributes":{"charm":2,"happiness":1},"addTags":["舞台混子"]},"repeatable":false},
+      {"id":"xc04","name":"人生第一拍","ageMin":4,"ageMax":4,"weight":100,"text":"父亲买来一副儿童球拍。许辰挥空十三次，第十四次终于击中——旁边的台灯。","resultText":"台灯退役，球拍正式上岗。","result":{"attributes":{"health":1,"happiness":2},"addTags":["开始挥拍"]},"repeatable":false},
+      {"id":"xc05","name":"家庭锦标赛","ageMin":5,"ageMax":5,"weight":100,"text":"家里举办首届客厅羽毛球锦标赛。许辰夺冠，主要原因是其他选手都在保护花瓶。","result":{"attributes":{"happiness":2,"health":1},"addTags":["客厅冠军"]},"repeatable":false},
+      {"id":"xc06","name":"顺利入学","ageMin":6,"ageMax":6,"weight":100,"text":"许辰背着新书包入学。老师温柔，同学友善，午餐还有他最喜欢的鸡腿。","resultText":"人生仍然顺得像开了简单模式。","result":{"attributes":{"intelligence":2,"happiness":2},"addTags":["一帆风顺"]},"repeatable":false},
+      {"id":"xc07","name":"班干部风波","ageMin":7,"ageMax":7,"weight":100,"text":"许辰被选为体育委员。原因不是体育最好，而是喊“集合”时声音最像学校广播。","choices":[
+        {"text":"认真履职","resultText":"他每天提前到操场，逐渐练出一副好体格。","result":{"attributes":{"health":2,"charm":1},"addTags":["靠谱体委"]}},
+        {"text":"把集合喊出播音腔","resultText":"全班笑到无法站队，但许辰意外成为校园广播候补。","result":{"attributes":{"charm":2,"happiness":2},"addTags":["广播腔"]}}
+      ],"repeatable":false},
+      {"id":"xc08","name":"兴趣班岔路","ageMin":8,"ageMax":8,"weight":100,"text":"父母让许辰自己挑一门兴趣班。钢琴、奥数和羽毛球同时摆在面前。","choices":[
+        {"text":"毫不犹豫选羽毛球","resultText":"球拍握进手里的那刻，他觉得自己选对了。","result":{"attributes":{"health":2,"happiness":3},"addTags":["羽毛球少年"]}},
+        {"text":"先学奥数，再偷偷打球","resultText":"他学会了计算抛物线，却仍算不准羽毛球何时砸中脑袋。","result":{"attributes":{"intelligence":2,"health":1},"addTags":["会算不会躲","羽毛球少年"]}},
+        {"text":"钢琴和羽毛球都要","condition":{"attribute":"wealth","op":"gte","value":8},"requirementText":"家境达到 8","resultText":"周末被排得满满当当，他的左手弹琴，右手挥拍。","result":{"attributes":{"charm":2,"intelligence":1,"health":1},"addTags":["文体两开花","羽毛球少年"]}}
+      ],"repeatable":false},
+      {"id":"xc09","name":"第一位宿敌","ageMin":9,"ageMax":9,"weight":100,"text":"球馆里出现一个总穿红鞋的同龄人。两人技术相当，但对方每次杀球都莫名朝许辰额头飞。","resultText":"一段伟大宿敌关系，从一声清脆的“啪”开始。许辰毫发无伤。","result":{"attributes":{"health":1,"happiness":2},"addTags":["红鞋宿敌","脑壳吸球"]},"repeatable":false},
+      {"id":"xc10","name":"正式入坑","ageMin":10,"ageMax":10,"weight":100,"text":"许辰第一次用标准动作击出漂亮高远球。清脆的击球声让整个下午都变得明亮。","resultText":"他真正喜欢上了羽毛球。","result":{"attributes":{"health":3,"happiness":3},"addTags":["热爱羽毛球"]},"repeatable":false},
+      {"id":"xc11","name":"校队选拔","ageMin":11,"ageMax":11,"weight":100,"text":"校队选拔时，许辰连续接下五个球，第六个球准确停在他的刘海上。教练沉默片刻，写下了他的名字。","result":{"attributes":{"health":1,"charm":2},"addTags":["进入校队"]},"repeatable":false},
+      {"id":"xc12","name":"迎面扣杀","ageMin":12,"ageMax":12,"weight":100,"text":"第一次参加正式双打，对面一记凶狠扣杀正中许辰脑门。球弹得比他接过的任何一球都远。","choices":[
+        {"text":"揉揉脑袋，继续打","resultText":"可以丢分，不能丢掉热爱。许辰重新站好，而且脑壳一点事都没有。","result":{"attributes":{"health":1,"happiness":2},"addTags":["头铁","坚持训练"]}},
+        {"text":"请求医疗暂停","resultText":"五分钟后他重新上场，并开始认真研究防护头带。","result":{"attributes":{"health":1,"intelligence":1},"addTags":["科学护头","坚持训练"]}}
+      ],"repeatable":false},
+      {"id":"xc13","name":"脑门商业计划","ageMin":13,"ageMax":13,"weight":100,"text":"同学建议许辰出租脑门做广告位：“反正镜头总能拍到。”","choices":[
+        {"text":"严词拒绝","resultText":"尊严保住了，零花钱没有增加。","result":{"attributes":{"charm":1,"happiness":1}}},
+        {"text":"贴上球馆优惠券","resultText":"优惠券当天被扣杀打飞，但球馆老板还是给了他终身八折。","result":{"attributes":{"wealth":2,"happiness":2},"addTags":["脑门赞助商"]}}
+      ],"repeatable":false},
+      {"id":"xc14","name":"青春期与发型","ageMin":14,"ageMax":14,"weight":100,"text":"许辰试图留一个帅气发型，但训练后刘海总被羽毛球压成一道精准的中分。","resultText":"理发师称之为“运动轨迹美学”。","result":{"attributes":{"charm":1,"happiness":1},"addTags":["弹道中分"]},"repeatable":false},
+      {"id":"xc15","name":"又是脑壳","ageMin":15,"ageMax":15,"weight":100,"text":"许辰球技进步很大，吸引羽毛球精准命中脑壳的天赋却进步得更快。","resultText":"球落地，许辰没事。队友确认：他的脑壳可能自带羽毛球磁铁。","result":{"attributes":{"health":1,"intelligence":1,"happiness":3},"addTags":["球馆传奇","脑壳磁铁"]},"repeatable":false},
+      {"id":"xc16","name":"市赛决胜局","ageMin":16,"ageMax":16,"weight":100,"text":"市赛决胜局，对面开始疯狂压后场。许辰发现网前有一大片空当。","choices":[
+        {"text":"大胆放网","condition":{"any":[{"hasTag":"科学护头"},{"attribute":"intelligence","op":"gte","value":7}]},"requirementText":"拥有“科学护头”或智力达到 7","resultText":"羽毛球轻轻越网落地。许辰第一次靠脑子而不是脑门赢球。","result":{"attributes":{"intelligence":2,"charm":3,"happiness":3},"addTags":["市赛冠军"]}},
+        {"text":"继续硬刚","resultText":"双方杀得天昏地暗。许辰虽然没拿冠军，却拿到观众颁发的“最佳脑壳奖”。","result":{"attributes":{"health":1,"charm":2,"happiness":2},"addTags":["快乐亚军"]}}
+      ],"repeatable":false},
+      {"id":"xc17","name":"红鞋宿敌归来","ageMin":17,"ageMax":17,"weight":100,"condition":{"hasTag":"红鞋宿敌"},"text":"红鞋宿敌转学归来，第一句话是：“你脑门还好吗？”第二句话是：“来一局？”","resultText":"两人打到闭馆，最后一起去吃了烤串。","result":{"attributes":{"health":1,"happiness":3},"addTags":["宿敌变好友"]},"repeatable":false},
+      {"id":"xc18","name":"坚持下来","ageMin":18,"ageMax":18,"weight":100,"text":"无数次被扣杀、输球和加练之后，许辰仍站在场上。他终于能从容接住过去令他害怕的重扣。","resultText":"坚持没有让他刀枪不入，却让他不再轻易退后。","result":{"attributes":{"health":4,"charm":3,"happiness":4},"addTags":["永不放弃","业余高手"]},"repeatable":false},
+      {"id":"xc19","name":"大学社团招新","ageMin":19,"ageMax":19,"weight":100,"text":"大学羽毛球社听说了许辰的传说，把招新海报标题改成《寻找能接杀球的人，以及一位能用脑门接球的人》。","resultText":"许辰入社当天，海报被紧急撤下。","result":{"attributes":{"charm":2,"happiness":2},"addTags":["大学球社"]},"repeatable":false},
+      {"id":"xc20","name":"奇怪的心跳","ageMin":20,"ageMax":20,"weight":100,"text":"球社来了一个笑起来很好看的学长。对方帮许辰调整握拍时，他的心跳比决胜局还快。","choices":[
+        {"text":"承认自己有点心动","resultText":"许辰没有急着定义一切，只诚实记录了这次心跳。","result":{"attributes":{"happiness":2,"intelligence":1},"addTags":["第一次同性心动"]}},
+        {"text":"一定是运动过量","resultText":"他喝了三瓶水，心跳仍然没有恢复正常。","result":{"attributes":{"happiness":1},"addTags":["暂时嘴硬","第一次同性心动"]}}
+      ],"repeatable":false},
+      {"id":"xc21","name":"认识自己","ageMin":21,"ageMax":21,"weight":100,"text":"成年后的许辰确认自己喜欢男性，也发现自己在亲密关系中更喜欢被照顾、偏被动的“0号位”。这不是谁让他改变，只是他自然地认识了自己。","choices":[
+        {"text":"坦然接受自己","resultText":"许辰愉快地接受了自我说明书：爱打羽毛球，脑壳吸球，喜欢男性，是个0。条理清晰。","result":{"attributes":{"happiness":6,"charm":2},"addTags":["坦然出柜","喜欢男性","快乐的0"]}},
+        {"text":"写进人生备忘录","resultText":"备忘录只有一行：做自己，打好球，保护好脑壳和其他重要部位。","result":{"attributes":{"happiness":5,"intelligence":1},"addTags":["自我接纳","喜欢男性","快乐的0"]}}
+      ],"repeatable":false},
+      {"id":"xc22","name":"家庭饭桌","ageMin":22,"ageMax":22,"weight":100,"text":"许辰决定向家人说出心里话。饭桌突然安静，父亲放下筷子，母亲先给他夹了一块肉。","choices":[
+        {"text":"认真说完","resultText":"父母需要一点时间理解，但先确认了一件事：许辰永远是家里最重要的人。","result":{"attributes":{"happiness":5,"health":1},"addTags":["家人支持"]}},
+        {"text":"先说取向，再顺便说想换球拍","resultText":"父母表示喜欢谁都没问题，随后认真讨论起新球拍的磅数。许辰同时获得理解和豪华装备。","result":{"attributes":{"wealth":2,"happiness":5},"addTags":["家人支持","豪华球拍"]}}
+      ],"repeatable":false},
+      {"id":"xc23","name":"相亲乌龙","ageMin":23,"ageMax":23,"weight":100,"text":"亲戚热心介绍对象。许辰到场才发现，对方也是被家里催来的，两人对视三秒，同时松了口气。","resultText":"两人互相掩护，最后成为分享催婚情报的战略盟友。","result":{"attributes":{"happiness":3,"intelligence":1},"addTags":["催婚盟友"]},"repeatable":false},
+      {"id":"xc24","name":"球馆里的相遇","ageMin":24,"ageMax":24,"weight":100,"text":"许辰在球馆认识了一个叫林野的男人。对方没有朝他脑袋扣杀，而是约他打完球一起吃宵夜。","choices":[
+        {"text":"答应宵夜","resultText":"他们从球拍聊到生活，店铺打烊后仍沿着街慢慢走。","result":{"attributes":{"happiness":6,"charm":2},"addTags":["拥有男友","稳定恋爱"]}},
+        {"text":"先约下一场球","resultText":"第二场、第三场、第四场以后，宵夜还是发生了。","result":{"attributes":{"happiness":5,"health":1},"addTags":["拥有男友","球场恋爱"]}}
+      ],"repeatable":false},
+      {"id":"xc25","name":"情侣混双","ageMin":25,"ageMax":25,"weight":100,"condition":{"hasTag":"拥有男友"},"text":"许辰和林野报名情侣混双。对手看见许辰时窃窃私语：“就是那个脑门接杀球的。”","resultText":"林野负责扣杀，许辰负责防守，以及阻止林野真的瞄准自己。","result":{"attributes":{"health":2,"happiness":4,"charm":1},"addTags":["情侣搭档"]},"repeatable":false},
+      {"id":"xc26","name":"成年人的夜晚","ageMin":26,"ageMax":26,"weight":100,"condition":{"hasTag":"拥有男友"},"text":"感情稳定以后，两名成年人在充分沟通、彼此同意的前提下，让关系更亲密了一步。作为快乐的0，许辰对这次约会非常满意。","resultText":"具体过程不记入公开档案。只知道第二天林野准备了早餐，许辰坐在软垫上开心吃完。","result":{"attributes":{"happiness":6,"health":1},"addTags":["亲密关系","幸福恋爱"]},"repeatable":false},
+      {"id":"xc27","name":"人体工学座椅","ageMin":27,"ageMax":27,"weight":100,"condition":{"hasTag":"幸福恋爱"},"text":"林野送给许辰一把旗舰人体工学座椅。店员问主要用途，许辰回答：“办公、游戏，以及维持幸福生活。”","resultText":"家庭条件好、男友又贴心，各种生活需求都能被妥善照顾。","result":{"attributes":{"health":2,"happiness":3},"addTags":["坐得很科学"]},"repeatable":false},
+      {"id":"xc28","name":"家庭友谊赛","ageMin":28,"ageMax":28,"weight":100,"text":"许辰带林野回家。父亲提议打一场家庭友谊赛，母亲强调唯一规则：不许扣许辰脑袋。","resultText":"比赛很成功。父亲输球后认可了林野，母亲则全程盯着羽毛球的飞行方向。","result":{"attributes":{"happiness":6,"charm":2},"addTags":["家人接纳","家庭混双"]},"repeatable":false},
+      {"id":"xc29","name":"脑门保险","ageMin":29,"ageMax":29,"weight":100,"text":"保险业务员听完许辰的运动经历，沉默良久，提出为他定制“高频球类头部意外险”。","choices":[
+        {"text":"认真投保","resultText":"保险公司连夜新增了一个从未存在过的风险类别。","result":{"attributes":{"wealth":-1,"intelligence":2},"addTags":["脑门有保险"]}},
+        {"text":"相信自己的反应","condition":{"hasTag":"永不放弃"},"requirementText":"拥有“永不放弃”","resultText":"林野默默替他买了。爱情有时就是不相信你的迷之自信。","result":{"attributes":{"happiness":3},"addTags":["被认真保护"]}}
+      ],"repeatable":false},
+      {"id":"xc30","name":"命运扣杀","ageMin":30,"ageMax":30,"weight":100,"text":"三十岁那年，许辰再次站上球场。红鞋老友高高跃起，一记熟悉的重扣直奔脑门。","choices":[
+        {"text":"漂亮地接回去","condition":{"hasTag":"永不放弃"},"requirementText":"拥有“永不放弃”","resultText":"许辰稳稳接住。球越网落地，全场欢呼。他笑得比任何一次胜利都开心。","result":{"attributes":{"health":2,"happiness":8},"ending":"xc_happy"}},
+        {"text":"熟练地抱头蹲下","resultText":"球出界了。许辰保护了脑袋，也保护了下半场的幸福生活。","result":{"attributes":{"happiness":5,"intelligence":2},"ending":"xc_safe"}}
+      ],"repeatable":false},
+      {"id":"fallback","name":"许辰的幸福一年","ageMin":0,"ageMax":100,"weight":1,"text":"这一年过得很好。许辰陪伴家人、和男友约会，也继续在球馆里用脑壳吸引羽毛球。","result":{"attributes":{"happiness":2,"health":1}},"repeatable":true}
+    ],
+    "endings":[
+      {"id":"xc_happy","name":"幸福吸球体质","description":"许辰接住了家人的爱、羽毛球的热爱和一段真诚的同性恋情。至于接不住的扣杀，最后都会准确落在他毫发无伤的脑壳上。","priority":100,"condition":{"hasTag":"永不放弃"},"scoreBonus":180},
+      {"id":"xc_safe","name":"快乐的0号位","description":"许辰过着富足、热闹而幸福的生活：家人理解，男友体贴，球友很多，脑壳依然拥有不可解释的吸球能力。","priority":90,"condition":{"hasTag":"喜欢男性"},"scoreBonus":160},
+      {"id":"ordinary_life","name":"许辰一直很幸福","description":"没有苦难，也没有坏结局。许辰只是继续打球、恋爱、被家人爱着，偶尔用脑壳接住一记荒诞的扣杀。","priority":0,"condition":{},"scoreBonus":120}
+    ]
+  }
+  </script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
