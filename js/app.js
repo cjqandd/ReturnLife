@@ -115,7 +115,7 @@ function bindUI() {
   $("animation-speed").value=settings.animationSpeed;$("auto-speed").value=settings.autoSpeed;$("volume-setting").value=settings.volume;
 }
 async function init() {
-  try { data=await loadGameData(); const errors=validateData(data); if(errors.length) throw new Error(errors.join("\n")); bindUI(); setupDebug(); saveSettings(); $("archive-number").textContent=String(JSON.parse(localStorage.getItem("returnlife.endings")||"[]").length+1).padStart(6,"0"); $("continue-button").hidden=!localStorage.getItem("returnlife.lastLife"); showScreen("start-screen"); }
+  try { data=await loadGameData(); const errors=validateData(data); if(errors.length) throw new Error(errors.join("\n")); bindUI(); setupDebug(); saveSettings(); $("archive-number").textContent=String(JSON.parse(localStorage.getItem("returnlife.endings")||"[]").length+1).padStart(6,"0"); $("continue-button").hidden=!localStorage.getItem("returnlife.lastLife"); if(data.scenario){document.querySelector(".hero-title").innerHTML=`${data.scenario.protagonist}<br><em>荒诞人生</em>`;document.querySelector(".hero-copy").textContent=data.scenario.description;document.title=`${data.scenario.protagonist}的人生 · ReturnLife`;} showScreen("start-screen"); }
   catch(error){ $("loading-screen").innerHTML=`<p class="eyebrow">ARCHIVE ERROR</p><h1>档案无法打开</h1><p>${error.message.replaceAll("\n","<br>")}</p><p>请确认正在通过本地静态服务器访问。</p>`; console.error(error); }
 }
 init();
