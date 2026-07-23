@@ -1,0 +1,20 @@
+[
+  {"id":"quick_learner","name":"过目不忘","description":"知识在脑海中留下清晰的刻痕。","rarity":2,"attributes":{"intelligence":3},"tags":["善于学习"],"excludes":["late_bloomer"]},
+  {"id":"late_bloomer","name":"大器晚成","description":"前路缓慢，但时间会站在你这一边。","rarity":2,"attributes":{"happiness":1},"tags":["后劲十足"],"excludes":["quick_learner"]},
+  {"id":"silver_spoon","name":"锦衣玉食","description":"出生时，世界已经为你打开几扇门。","rarity":2,"attributes":{"wealth":4},"tags":["富裕家庭"],"excludes":["humble_home"]},
+  {"id":"humble_home","name":"寒门微光","description":"资源不多，韧性却从不缺席。","rarity":1,"attributes":{"wealth":-2,"health":2},"tags":["懂得节俭"],"excludes":["silver_spoon"]},
+  {"id":"sunny","name":"向阳而生","description":"你总能在灰色日子里发现一点光。","rarity":1,"attributes":{"happiness":3},"tags":["乐观"]},
+  {"id":"sturdy","name":"身强体健","description":"你拥有足以承载远方的身体。","rarity":1,"attributes":{"health":4},"tags":["精力充沛"]},
+  {"id":"charismatic","name":"人群焦点","description":"你很容易被看见，也很容易被记住。","rarity":2,"attributes":{"charm":4},"tags":["善于交际"]},
+  {"id":"bookish","name":"书页栖身","description":"孤独时，文字总会接住你。","rarity":1,"attributes":{"intelligence":2,"happiness":1},"tags":["热爱阅读"]},
+  {"id":"restless","name":"不安分的心","description":"你不愿在同一条河里停留太久。","rarity":1,"attributes":{"happiness":-1,"health":1},"tags":["渴望远方"]},
+  {"id":"lucky","name":"幸运硬币","description":"偶尔，命运会把硬币抛向你希望的一面。","rarity":3,"attributes":{"happiness":2},"tags":["幸运"]},
+  {"id":"sensitive","name":"纤细心弦","description":"你感受得更多，快乐与悲伤都是。","rarity":1,"attributes":{"charm":1,"happiness":-1},"tags":["敏感"]},
+  {"id":"craftsman","name":"手有余香","description":"双手知道如何把想象变成真实。","rarity":2,"attributes":{"intelligence":1},"tags":["手艺人"]},
+  {"id":"calm","name":"静水深流","description":"越是喧闹，你越能听见自己的声音。","rarity":2,"attributes":{"happiness":2,"intelligence":1},"tags":["沉着"]},
+  {"id":"wanderer","name":"远方来信","description":"陌生的城市和道路总在呼唤你。","rarity":1,"attributes":{"health":1},"tags":["旅行者"]},
+  {"id":"kind","name":"温柔天性","description":"你愿意伸手，也常被别人的手接住。","rarity":1,"attributes":{"happiness":2,"charm":1},"tags":["善良"]},
+  {"id":"ambitious","name":"不甘平凡","description":"你很早便看见山顶，也看见代价。","rarity":2,"attributes":{"intelligence":2,"happiness":-1},"tags":["野心"]},
+  {"id":"musical","name":"绝对音感","description":"世界的噪声在你耳边各有音高。","rarity":2,"attributes":{"charm":2},"tags":["音乐天赋"]},
+  {"id":"old_soul","name":"旧日灵魂","description":"你似乎天生懂得一些告别。","rarity":3,"attributes":{"intelligence":2,"happiness":2},"tags":["通透"]}
+]

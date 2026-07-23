@@ -1,0 +1,11 @@
+[
+  {"id":"masterpiece","name":"此生留痕","description":"你把漫长的积累凝成作品。许多年后，仍有人因它知道你曾经来过。","priority":90,"condition":{"all":[{"hasTag":"留下作品"},{"attribute":"happiness","op":"gte","value":10}]},"scoreBonus":120},
+  {"id":"warm_life","name":"灯火可亲","description":"你没有拥有所有答案，却始终有人与你共享一盏灯、一顿饭和漫长岁月。","priority":80,"condition":{"all":[{"hasTag":"温暖家庭"},{"attribute":"happiness","op":"gte","value":10}]},"scoreBonus":100},
+  {"id":"world_walker","name":"行遍山海","description":"世界曾在你面前展开，而你真的迈出了脚步。那些远方最终成为你的一部分。","priority":70,"condition":{"all":[{"hasTag":"见过远方"},{"hasTag":"旅行者"}]},"scoreBonus":85},
+  {"id":"legacy","name":"薪火相传","description":"你把一生所得认真交给后来的人。经验没有随岁月消失，而是换了一双年轻的手。","priority":75,"condition":{"hasTag":"传承经验"},"scoreBonus":90},
+  {"id":"self_made","name":"白手成家","description":"起点没有给予你太多，你却凭双手建立了自己的生活与名字。","priority":65,"condition":{"all":[{"hasTag":"懂得节俭"},{"any":[{"hasTag":"事业有成"},{"attribute":"wealth","op":"gte","value":12}]}]},"scoreBonus":80},
+  {"id":"quiet_wisdom","name":"静水一生","description":"你最终学会接受生活的潮汐。热闹散去以后，内心仍然安稳。","priority":55,"condition":{"all":[{"hasTag":"懂得缓慢"},{"attribute":"happiness","op":"gte","value":12}]},"scoreBonus":70},
+  {"id":"burned_out","name":"燃尽之烛","description":"你曾拼命照亮前路，却忘了为自己留下足够的光。","priority":95,"condition":{"all":[{"attribute":"health","op":"lte","value":1},{"attribute":"wealth","op":"gte","value":10}]},"scoreBonus":25},
+  {"id":"long_life","name":"岁月长河","description":"你见过许多春天，也送走许多旧日。长寿本身便成为一份厚重的礼物。","priority":60,"condition":{"age":{"op":"gte","value":80}},"scoreBonus":75},
+  {"id":"ordinary_life","name":"人间一程","description":"这不是传奇，也并非遗憾。你认真生活过，爱过一些人，也被一些人记得。","priority":0,"condition":{},"scoreBonus":40}
+]

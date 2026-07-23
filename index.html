@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17130f">
+  <title>ReturnLife · 人生重启档案</title>
+  <meta name="description" content="翻开一份新的命运档案，选择天赋，经历人生，再次重来。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="返回首页">
+      <span class="brand-mark">R</span>
+      <span><b>RETURNLIFE</b><small>人生重启档案</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-button" id="sound-toggle" aria-label="切换声音">♪</button>
+      <button class="text-button" id="settings-toggle">设置</button>
+    </div>
+  </header>
+
+  <main id="app" class="app-shell" aria-live="polite">
+    <section id="loading-screen" class="screen centered active">
+      <p class="eyebrow">ARCHIVE LOADING</p>
+      <h1>正在翻阅命运档案…</h1>
+    </section>
+
+    <section id="start-screen" class="screen centered">
+      <p class="eyebrow">LIFE ARCHIVE · NO. <span id="archive-number">000001</span></p>
+      <h1 class="hero-title">如果人生可以<br><em>再来一次</em></h1>
+      <p class="hero-copy">你无法挑选所有的好运，但可以决定如何回应命运。</p>
+      <div class="seal-row" aria-hidden="true"><span></span><i>命运待启</i><span></span></div>
+      <button class="primary-button large" id="start-button">开启新人生 <span>→</span></button>
+      <button class="link-button" id="continue-button" hidden>查看上一次人生</button>
+    </section>
+
+    <section id="talent-screen" class="screen">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHAPTER 01</p><h2>选择三项天赋</h2></div>
+        <p>命运给出了十张牌。慎重选择，它们会在某一刻回应你。</p>
+      </div>
+      <div class="selection-meter"><span>已选择</span><strong id="talent-count">0 / 3</strong></div>
+      <div id="talent-grid" class="talent-grid"></div>
+      <div class="sticky-action"><button class="primary-button" id="talent-confirm" disabled>确认天赋 <span>→</span></button></div>
+    </section>
+
+    <section id="attribute-screen" class="screen">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHAPTER 02</p><h2>分配初始属性</h2></div>
+        <p>每一种优势都需要代价。天赋加成会在分配完成后生效。</p>
+      </div>
+      <div class="points-card"><span>剩余点数</span><strong id="points-left">20</strong><small>每项基础值最高 10</small></div>
+      <div id="attribute-list" class="attribute-list"></div>
+      <div class="sticky-action"><button class="secondary-button" id="attribute-back">返回</button><button class="primary-button" id="attribute-confirm" disabled>投身人海 <span>→</span></button></div>
+    </section>
+
+    <section id="life-screen" class="screen">
+      <div class="life-layout">
+        <aside class="status-panel">
+          <p class="eyebrow">CURRENT FILE</p>
+          <div class="age-stamp"><strong id="current-age">0</strong><span>岁</span></div>
+          <div id="status-attributes" class="mini-attributes"></div>
+          <div class="status-block"><span>携带天赋</span><div id="status-talents" class="tag-list"></div></div>
+          <div class="status-block"><span>人生标签</span><div id="status-tags" class="tag-list muted"></div></div>
+        </aside>
+        <div class="event-column">
+          <div class="timeline-heading"><p class="eyebrow">LIFE IN PROGRESS</p><div class="play-controls"><button id="auto-button" class="text-button">自动播放</button></div></div>
+          <article id="event-card" class="event-card">
+            <div class="event-age"><span id="event-year">公元</span><strong><span id="event-age">0</span> 岁</strong></div>
+            <p id="event-text" class="event-text"></p>
+            <p id="event-result" class="event-result"></p>
+            <div id="event-changes" class="change-list"></div>
+            <div id="choice-list" class="choice-list"></div>
+          </article>
+          <button class="primary-button full" id="next-button">走向下一年 <span>↓</span></button>
+          <div id="history-list" class="history-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ending-screen" class="screen centered">
+      <p class="eyebrow">ARCHIVE CLOSED</p>
+      <div class="ending-seal">终</div>
+      <p id="ending-kicker" class="ending-kicker">你的人生结局</p>
+      <h2 id="ending-title" class="ending-title"></h2>
+      <p id="ending-description" class="ending-description"></p>
+      <div class="score-card"><span>人生评分</span><strong id="ending-score">0</strong><small id="ending-grade">未评级</small></div>
+      <div id="ending-attributes" class="ending-attributes"></div>
+      <div class="ending-actions"><button class="secondary-button" id="review-button">回顾一生</button><button class="primary-button" id="restart-button">再次重开 <span>↻</span></button></div>
+    </section>
+  </main>
+
+  <dialog id="settings-dialog">
+    <form method="dialog">
+      <div class="dialog-heading"><h2>偏好设置</h2><button class="icon-button" value="cancel" aria-label="关闭">×</button></div>
+      <label>动画速度 <select id="animation-speed"><option value="0.6">舒缓</option><option value="1" selected>标准</option><option value="1.6">快速</option></select></label>
+      <label>自动播放 <select id="auto-speed"><option value="2400">舒缓</option><option value="1500" selected>标准</option><option value="800">快速</option></select></label>
+      <label>音量 <input id="volume-setting" type="range" min="0" max="1" step="0.1" value="0.5"></label>
+      <button class="primary-button full" value="default">保存设置</button>
+    </form>
+  </dialog>
+
+  <aside id="debug-panel" class="debug-panel" hidden>
+    <strong>调试模式</strong><code id="debug-seed"></code>
+    <label>年龄 <input id="debug-age" type="number" min="0" max="120"></label>
+    <label>强制事件 <select id="debug-event"></select></label>
+    <button id="debug-apply">应用年龄</button><button id="debug-trigger">触发事件</button>
+    <pre id="debug-output"></pre>
+  </aside>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
